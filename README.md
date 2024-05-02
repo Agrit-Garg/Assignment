@@ -76,7 +76,7 @@ To use the application, follow these steps:
 
 ### Login:
 
-1. Once your email is verified, you can proceed to log in.
+1. Once you sign up, you can proceed to log in.
 2. Enter your credentials and log in.
 
 ### View Posts:
