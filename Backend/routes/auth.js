@@ -1,13 +1,15 @@
 import express from "express";
-const router = express.Router()
 import User from '../models/User.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import dotenv from "dotenv";
-
 import { sendVerificationEmail, sendResetPasswordEmail } from '../utils/email.js'
+import loginLimiter from "../middleware/loginLimiter.js";
+
+const router = express.Router()
 
 dotenv.config();
+
 
 // register
 router.post("/register", async (req, res) => {
@@ -39,7 +41,7 @@ router.post("/register", async (req, res) => {
 
 
 //LOGIN
-router.post("/login", async (req, res) => {
+router.post("/login", loginLimiter, async (req, res) => {
     try {
         const user = await User.findOne({ email: req.body.email })
         // console.log(user)

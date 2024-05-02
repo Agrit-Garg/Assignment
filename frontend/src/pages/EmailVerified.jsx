@@ -35,7 +35,7 @@ const EmailVerified = () => {
         setSuccess(false);
         setError(true);
         navigate('/login');
-      }, 3000);
+      }, 8000);
 
 
     return (
@@ -50,10 +50,10 @@ const EmailVerified = () => {
             </div>
             
             ) : error ? (
-                <div className="text-red-500">
+                <div className="text-red-500 flex flex-col justify-center items-center">
                    <video src={errorAnimation} loop autoPlay muted className="w-64 h-80 mt-[-50px]"/>
                     <div className="text-center mt-[-40px]">
-                    <p className='mb-4 text-xl md:text-3xl'>Error in verifying email</p>
+                    <p className='mb-4 text-xl md:text-3xl'>Error in verifying email. Again register with valid mail</p>
                     <Link to="/login" className="text-sm md:text-lg text-white p-1 md:p-2 rounded-lg bg-purple-700 hover:bg-purple-600">Go to login page</Link>
                 </div>
                 </div>

@@ -47,7 +47,9 @@ const Login = () => {
     } catch (err) {
       if (err.response) {
         // Server responded with a status code
-        if (err.response.status === 401) {
+        if (err.response.status === 429) {
+          setError(err.response.data);
+        } else if (err.response.status === 401) {
           setError("Invalid password. Please try again.");
         } else if (err.response.status === 404) {
           setError("User not registered. Please sign up.");

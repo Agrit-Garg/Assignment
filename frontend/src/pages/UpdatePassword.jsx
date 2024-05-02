@@ -45,8 +45,11 @@ const UpdatePassword = () => {
       // Simulate successful password update
       setSuccess(response.data.message);
 
-      navigate('/login');
-
+      setTimeout(() => {
+        setSuccess("");
+        navigate('/login');
+      }, 2000);
+      
     } catch (err) {
       if (err.response) {
         // Server responded with a status code
