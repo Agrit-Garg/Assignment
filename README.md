@@ -16,7 +16,8 @@ News Portal is a full-stack web application that allows users to view the latest
 - Implemented user authentication and authorization.
 - Implemented password reset functionality.
 - Integrated email verification for signup.
-- Added password visibility toggle in login page.
+- Added password visibility toggle on the login page.
+- Implemented rate limiting middleware in the login route to prevent brute force attacks by restricting login attempts to 5 within 5 minutes per IP address.
 - Used Framer Motion React libraries to enhance user experience.
 - Fetching and displaying news posts using News API.
 
