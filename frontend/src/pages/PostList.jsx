@@ -19,7 +19,7 @@ const PostList = () => {
   const fetchArticles = async () => {
     try {
       const response = await axios.get(
-        `https://newsapi.org/v2/top-headlines?country=us&apiKey=5ef349ce4b3d472591a9cbace48ce6fe&page=${page}`
+        `https://newsapi.org/v2/everything?q=tesla&apiKey=5ef349ce4b3d472591a9cbace48ce6fe&page=${page}`
       );
       setArticles((prevArticles) => [
         ...prevArticles,
